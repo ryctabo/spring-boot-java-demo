@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: spring-boot-java-demo
+  jpa:
+    hibernate:
+      ddl-auto: update
