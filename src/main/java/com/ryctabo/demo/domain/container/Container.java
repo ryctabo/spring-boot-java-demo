@@ -5,10 +5,9 @@ import com.ryctabo.demo.domain.container.valueobjects.ContainerName;
 import com.ryctabo.demo.domain.core.Country;
 import com.ryctabo.demo.domain.core.Warehouse;
 import com.ryctabo.demo.domain.location.LocationName;
+import java.time.Instant;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import java.time.Instant;
 
 @Data
 @AllArgsConstructor

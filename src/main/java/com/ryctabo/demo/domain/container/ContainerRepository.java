@@ -2,7 +2,6 @@ package com.ryctabo.demo.domain.container;
 
 import com.ryctabo.demo.domain.container.valueobjects.ContainerId;
 import com.ryctabo.demo.domain.container.valueobjects.ContainerName;
-
 import java.util.Optional;
 
 public interface ContainerRepository {

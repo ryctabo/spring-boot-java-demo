@@ -7,9 +7,8 @@ import com.ryctabo.demo.domain.container.ContainerRepository;
 import com.ryctabo.demo.domain.container.valueobjects.ContainerName;
 import com.ryctabo.demo.domain.core.Country;
 import com.ryctabo.demo.domain.location.LocationName;
-import lombok.AllArgsConstructor;
-
 import java.time.Instant;
+import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class CreateContainer {
