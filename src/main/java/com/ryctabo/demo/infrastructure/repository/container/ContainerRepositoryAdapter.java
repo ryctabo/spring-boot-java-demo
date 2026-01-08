@@ -11,9 +11,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @AllArgsConstructor
-public class DefaultContainerRepository implements ContainerRepository {
+public class ContainerRepositoryAdapter implements ContainerRepository {
 
-    private final JpaContainerRepository repository;
+    private final PostgresContainerRepository repository;
     private final ContainerConverter converter;
 
     @Override

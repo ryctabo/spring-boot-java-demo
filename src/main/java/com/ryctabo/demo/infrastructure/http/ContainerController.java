@@ -1,11 +1,9 @@
 package com.ryctabo.demo.infrastructure.http;
 
-import com.ryctabo.demo.app.usecases.CreateContainer;
+import com.ryctabo.demo.app.usecases.container.CreateContainerService;
 import com.ryctabo.demo.domain.container.Container;
 import com.ryctabo.demo.domain.container.ContainerRepository;
 import com.ryctabo.demo.domain.container.valueobjects.ContainerName;
-import com.ryctabo.demo.domain.core.Country;
-import com.ryctabo.demo.domain.location.LocationName;
 import lombok.AllArgsConstructor;
 import org.jspecify.annotations.NonNull;
 import org.springframework.http.HttpStatus;
@@ -17,15 +15,12 @@ import org.springframework.web.bind.annotation.*;
 public class ContainerController {
 
     private final ContainerRepository repository;
-    private final CreateContainer createContainer;
+    private final CreateContainerService createContainer;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ContainerResponse create(@RequestBody ContainerRequest req) {
-        var container = createContainer.invoke(
-                new ContainerName(req.name()),
-                new LocationName(req.location()),
-                new Country(req.country()));
+        var container = createContainer.invoke(req.toCommand());
         return convert(container);
     }
 
