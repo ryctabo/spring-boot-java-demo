@@ -4,6 +4,7 @@ import com.ryctabo.demo.app.usecases.container.CreateContainerService;
 import com.ryctabo.demo.domain.container.Container;
 import com.ryctabo.demo.domain.container.ContainerRepository;
 import com.ryctabo.demo.domain.container.valueobjects.ContainerName;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.jspecify.annotations.NonNull;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ public class ContainerController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ContainerResponse create(@RequestBody ContainerRequest req) {
+    public ContainerResponse create(@Valid @RequestBody ContainerRequest req) {
         var container = createContainer.invoke(req.toCommand());
         return convert(container);
     }
